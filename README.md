@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://github.com/omar-jalal/Advice-Generator-App/)
-- Live Site URL: (https://omar-jalal.github.io/Stats-Preview-Card/)
+- Solution URL(https://github.com/omar-jalal/Advice-Generator-App/)
+- Live Site URL: ()
 
 ### Built with
 
@@ -49,8 +49,8 @@ Users should be able to:
 - Transitions
 - Mobile-first workflow
 - [Sass](https://sass-lang.com/) - Better Css Workflow Library
-- [Postcss Load Config] (https://www.npmjs.com/package/postcss-load-config) Postcss Loader for Vite
-- [Autoprefixer] (https://autoprefixer.github.io/) Postcss plugin
+- [Postcss Load Config](https://www.npmjs.com/package/postcss-load-config) Postcss Loader for Vite
+- [Autoprefixer](https://autoprefixer.github.io/) Postcss plugin
 - [Bootstrap 5.0](https://getbootstrap.com/) - Css Components Framework
 - [Vite](https://vitejs.dev/) - Bundler
 - [Fontawesome](https://fontawesome.com/) - Icons Library
