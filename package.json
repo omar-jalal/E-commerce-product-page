@@ -1,0 +1,23 @@
+{
+  "name": "product-page",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss-load-config": "^4.0.1",
+    "sass": "^1.56.0",
+    "vite": "^3.2.0"
+  },
+  "postcss": {
+    "map": false,
+    "plugins": {
+      "autoprefixer": {}
+    }
+  }
+}

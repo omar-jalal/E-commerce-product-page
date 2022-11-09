@@ -1,0 +1,754 @@
+@use 'colors';
+
+%shadows {
+  filter: drop-shadow(0 0 .5em #333);
+}
+
+%tranistion {
+  transition: all .2s ease-in-out;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.overlay {
+  @extend %tranistion;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.7;
+  z-index: 10;
+  display: none;
+}
+
+p {
+  font-size: 1rem;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.display {
+  display: block!important;
+}
+
+.btn-primary {
+  background-color: colors.$orange!important;
+  border-color: colors.$orange!important;
+  border-radius: .7em;
+  margin-bottom: 1.6em;
+  padding: 0.8em;
+
+  &:hover {
+    background-color: colors.$paleOrange!important;
+    border-color: colors.$orange!important;
+    color: colors.$orange;
+  }
+
+  &:active {
+    background-color: colors.$orange!important;
+    border-color: colors.$orange!important;
+    color: colors.$white;
+  }
+}
+
+.fa-xmark:hover {
+  @extend %tranistion;
+}
+
+.attribution { 
+  font-size: 11px; text-align: center; 
+  margin-top: 1em;
+}
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+.nav-link {
+  color: colors.$darkGrayishBlue;
+  padding: 2em 0;
+  margin-right: 1em;
+  border-bottom: .2em solid transparent;
+
+  &:hover {
+    color: colors.$black;
+    border-bottom: .2em solid colors.$orange;
+  }
+}
+
+// Mobile
+p {
+  animation: slideInMob .5s linear,
+  fadeInMob .5s linear
+}
+
+span {
+  animation: slideInMob .5s linear,
+  fadeInMob .5s linear
+}
+
+h1 {
+  animation: slideInMob .5s linear,
+  fadeInMob .5s linear
+}
+
+button {
+  animation: fadeInMob .5s linear;
+  @extend %tranistion;
+}
+
+.desktop-layout section {
+  display: none;
+}
+
+.mobile-layout {
+  display: block;
+}
+
+.container {
+  width: 90%;
+  padding: 0;
+  margin: auto;
+  @extend %tranistion;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.navbar-toggler {
+  padding: 0;
+}
+
+.profile-pic {
+  display: flex;
+  gap: 1em;
+  img {
+    width: 1.5em;
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+      border: .2em solid colors.$orange
+    }
+  }
+}
+
+.navbar-brand {
+  @extend %tranistion;
+  color: colors.$black;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 2em;
+  margin-left: .3em;
+
+  &:hover {
+    color: colors.$orange;
+  }
+}
+
+.fa-cart-shopping {
+  margin-right: .5em;
+  margin-top: .5em;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.offcanvas {
+  width: 70%;
+
+  .container {
+    width: 85%;
+    padding: 0;
+    margin: auto;
+    height: 100%;
+  }
+
+  .offcanvas-header {
+    padding: 0;
+    margin-top: 2em;
+  }
+
+  .btn-close {
+    padding: 0;
+  }
+
+  .offcanvas-body {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-top: 3em;
+    padding: 0;
+
+    li {
+      margin-bottom: 1.5em;
+      cursor: pointer;
+
+      &:hover {
+        color: colors.$orange
+      }
+    }
+  }
+}
+
+.carousel-controller i {
+  @extend %tranistion;
+  background-color: colors.$white;
+  border-radius: 50%;
+  height: 3em;
+  width: 3em;
+  line-height: 3em;
+}
+
+.carousel-controller {
+  color: colors.$black;
+  opacity: 1;
+
+  &:hover {
+    color: colors.$orange!important;
+  }
+
+  &:active {
+    color: colors.$orange!important;
+  }
+}
+
+.fa-minus,
+.fa-plus {
+  cursor: pointer
+}
+
+.notify {
+  display: block;
+  position: absolute;
+  height: 1.3em;
+  width: 2em;
+  background-color: colors.$orange;
+  bottom: 55%;
+  right: 12%;
+  border-radius: 1.5em;
+  color: colors.$white;
+  line-height: 1.3em;
+  text-align: center;
+  font-size: .5em;
+  display: none;
+}
+
+#shopping-cart {
+  @extend %shadows;
+  display: none;
+  position: absolute!important;
+  z-index: 2;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%);
+  margin: auto;
+  width: 95vw!important;
+  max-height: 40vh;
+  overflow-y: scroll;
+  border-radius: .5em;
+}
+.card-title {
+  display: block;
+  margin: 1em 0 0 0;
+}
+
+.card-text {
+  text-align: center;
+  line-height: 20vh;
+  color: grey;
+  margin: 0;
+}
+
+.cart-product {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+  align-items: center;
+  margin-bottom: 1em;
+  letter-spacing: .05em;
+  color: colors.$darkGrayishBlue;
+
+  &:first-of-type {
+    margin-top: 1em;
+  }
+
+  .total {
+    color: colors.$black;
+    font-weight: 700;
+  }
+
+  .cart-product-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10%;
+  }
+
+  .card-product-info {
+    grid-column: 2 / span 3;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  i {
+    cursor: pointer;
+    color: rgb(194, 194, 194);
+
+    &:hover {
+      color: rgb(139, 139, 139);
+    }
+  }
+}
+
+.card-content button {
+  width: 100%;
+}
+
+.company-description {
+  color: colors.$orange;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .8em;
+  display: block;
+  margin: 1em 0;
+}
+
+.product-description {
+  color: colors.$darkGrayishBlue;
+}
+
+.offer {
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  align-items: center;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    align-items: center;
+  }
+
+  b {
+    font-size: 1.6em;
+  }
+
+  .off {
+    color: colors.$orange;
+    
+  }
+
+  del {
+    color: colors.$grayishBlue;
+  }
+}
+
+.counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 2em auto;
+
+  i {
+    color: colors.$orange;
+    font-size: 1em;
+  }
+}
+
+
+// Tablets
+@media only screen and (min-width: 481px) {
+  p {
+    animation: slideInTab .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  span {
+    animation: slideInTab .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  h1 {
+    animation: slideInTab .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  button {
+    animation: fadeInTab .5s linear;
+  }
+
+  .desktop-layout section {
+    display: none;
+  }
+
+  .mobile-layout {
+    display: block;
+  }
+
+  .carousel-inner {
+    max-height: 40vh;
+  }
+
+  .company-description {
+    margin: 2em 0;
+  }
+
+  .product-name {
+    margin-bottom: 3em;
+  }
+}
+// Laptops
+@media only screen and (min-width: 769px) {
+
+  p {
+    animation: slideInLap .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  span {
+    animation: slideInLap .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  h1 {
+    animation: slideInLap .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  button {
+    animation: fadeInLap .5s linear;
+  }
+  
+  .desktop-layout{
+    margin-top: 6em;
+    display: flex;
+    gap: 4em;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+      width: 50%;
+      // background-color: red;
+
+      .fa-xmark {
+        position: absolute;
+        z-index: 11;
+        top: 10%;
+        right: 35%;
+        color: colors.$white;
+        cursor: pointer;
+
+        &:hover {
+          color: colors.$orange
+        }
+      }
+      .preview,
+      .cPreview {
+        cursor: pointer;
+        border-radius: 4%;
+      }
+      
+      .thumbnail,
+      .cThumbnail {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
+        background-size: cover;
+        border-radius: 1em;
+        cursor: pointer;
+      }
+
+      .thumbnails,
+      .cThumbnails {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .activeThumb,
+        .cActiveThumb {
+          opacity: .3!important;
+          border: .2em solid colors.$orange
+        }
+
+        img {
+          max-width: 20%;
+          max-height: auto;
+          display: block;
+          
+          &:hover {
+            opacity: .4;
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-layout {
+    display: none;
+  }
+
+  .navbar-brand {
+    margin: 0;
+    padding: 0;
+    margin-right: 1.5em;
+  }
+
+  #shopping-cart {
+    max-width: 35vw;
+    top: 80%;
+    right: -50%;
+  }
+
+  .notify {
+    right: 3%;
+  }
+
+  .profile-pic {
+    img {
+      width: 2em;
+      border-radius: 50%;
+    }
+  }
+
+  .desktop-carousel {
+    animation: fadeInMob .3s linear;
+    display: none;
+    z-index: 11;
+  }
+
+  .desktop-carousel-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+
+    .preview {
+      width: 100%;
+    }
+
+    .cPreview {
+      width: 120%;
+    }
+
+    .thumbnails,
+    .cThumbnails {
+      width: 80%;
+    }
+
+    .carousel-controller {
+      transform: translateY(-10%);
+    }
+
+    .fa-chevron-right {
+      transform: translateX(170%);
+    }
+
+    .fa-chevron-left {
+      transform: translateX(-170%);
+    }
+  }
+
+  .offer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .interact {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-top: 2em;
+
+    .counter {
+      width: 30%;
+      margin: 0;
+    }
+
+    .d-grid {
+      width: 100%;
+
+      #add-to-cart {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Desktop
+@media only screen and (min-width: 1025px) {
+
+  p {
+    animation: slideInPc .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  span {
+    animation: slideInPc .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  h1 {
+    animation: slideInPc .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  button {
+    animation: fadeInPc .5s linear;
+  }
+
+  .desktop-carousel {
+    animation: fadeInMob .3s linear;
+  }
+
+  .desktop-layout {
+    gap: 5em;
+
+    section {
+      width: 50%;
+    }
+
+    article {
+      width: 50%;
+    }
+  }
+
+  .attribution { 
+    margin-top: 15em;
+  }
+}
+
+// TV
+@media only screen and (min-width: 1201px) {
+
+  p {
+    animation: slideInTv .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  span {
+    animation: slideInTv .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  h1 {
+    animation: slideInTv .5s linear,
+    fadeInMob .5s linear
+  }
+  
+  button {
+    animation: fadeInTv .5s linear;
+  }
+
+  .desktop-carousel {
+    animation: fadeInMob .3s linear;
+  }
+  .desktop-layout {
+    gap: 5em;
+
+    section {
+      width: 40%;
+    }
+
+    article {
+      width: 50%;
+      padding: 5em;
+    }
+  }
+
+  .attribution { 
+    margin-top: 6em;
+  }
+
+  #shopping-cart {
+    max-width: 30%;
+  }
+}
+
+// Slide In Animations
+@keyframes slideInMob {
+  from {
+    transform: translateX(-15%);
+  }
+}
+
+@keyframes slideInTab {
+  from {
+    transform: translateX(-15%);
+  }
+}
+
+@keyframes slideInLap {
+  from {
+    transform: translateX(-15%);
+  }
+}
+
+@keyframes slideInPc {
+  from {
+    transform: translateX(-15%);
+  }
+}
+
+@keyframes slideInTv {
+  from {
+    transform: translateX(-15%);
+  }
+}
+
+// Fade In Animations
+
+@keyframes fadeInMob {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInTab {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInLap {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInPc {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInTv {
+  from {
+    opacity: 0;
+  }
+}

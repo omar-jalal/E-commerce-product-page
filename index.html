@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | E-commerce product page</title>
+    <script src="https://kit.fontawesome.com/a2f060554e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+    <main>
+      <!--Header-->
+      <header>
+        <div class="container">
+          <!--Navbar-->
+          <nav class="navbar navbar-expand-md bg-light">
+            <div class="container-fluid">
+              <div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa-sharp fa-solid fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#"><strong>sneakers</strong></a>
+              </div>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Collections</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Men</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Women</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="profile-pic">
+                <i id="shopping-cart-icon" class="fa-solid fa-cart-shopping">
+                  <span class="notify">0</span>
+                </i>
+                <div id="shopping-cart" class="card" style="width: 18rem;">
+                  <div class="container">
+                    <b class="card-title">Cart</b>
+                    <div class="card-content">
+                      <div class="card-products-content"></div>
+                      <button class="btn btn-primary checkout" type="button">
+                        Checkout
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <img src="https://i.pravatar.cc/100" />
+              </div>
+              <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="container">
+                  <div class="offcanvas-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <ul>
+                      <li>Collections</li>
+                      <li>Men</li>
+                      <li>Women</li>
+                      <li>About</li>
+                      <li>Contact</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <!--Mobile Carousel-->
+        <div id="carouselExampleControls" class="carousel slide mobile-layout" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="/image-product-1.jpg" class="d-block w-100" alt="Product">
+            </div>
+            <div class="carousel-item">
+              <img src="/image-product-2.jpg" class="d-block w-100" alt="Product">
+            </div>
+            <div class="carousel-item">
+              <img src="/image-product-3.jpg" class="d-block w-100" alt="Product">
+            </div>
+            <div class="carousel-item">
+              <img src="/image-product-4.jpg" class="d-block w-100" alt="Product">
+            </div>
+          </div>
+          <button class="carousel-control-prev carousel-controller" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <button class="carousel-control-next carousel-controller" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </header>
+      
+      <div class="container desktop-layout">
+        <!--Desktop Gallery-->
+        <section>
+          <img class="preview" src="image-product-1.jpg" alt="product">
+          <div class="thumbnails">
+            <img class="thumbnail activeThumb" src="image-product-1-thumbnail.jpg" alt="product">
+            <img class="thumbnail" src="image-product-2-thumbnail.jpg" alt="product">
+            <img class="thumbnail" src="image-product-3-thumbnail.jpg" alt="product">
+            <img class="thumbnail" src="image-product-4-thumbnail.jpg" alt="product">
+          </div>
+
+          <!--Desktop Carousel-->
+          <div class="desktop-carousel">
+            <i class="fa-solid fa-xmark fa-2xl"></i>
+            <div class="desktop-carousel-body">
+              <img class="cPreview" src="image-product-1.jpg" alt="product">
+              <div class="cThumbnails">
+                <img class="cThumbnail cActiveThumb" src="image-product-1-thumbnail.jpg" alt="product">
+                <img class="cThumbnail" src="image-product-2-thumbnail.jpg" alt="product">
+                <img class="cThumbnail" src="image-product-3-thumbnail.jpg" alt="product">
+                <img class="cThumbnail" src="image-product-4-thumbnail.jpg" alt="product">
+              </div>
+              <button class="carousel-control-prev carousel-controller">
+                <i class="fa-solid fa-chevron-left  d-left-chevron"></i>
+              </button>
+              <button class="carousel-control-next carousel-controller">
+                <i class="fa-solid fa-chevron-right  d-right-chevron"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!--Product Info-->
+        <article> 
+          <span class="company-description">Sneaker Company</span>
+          <h1><strong class="product-name">Fall Limited Edition Sneakers</strong></h1>
+          <p class="product-description">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they;ll withstand everything the weather can offer.</p>
+          <div class="offer">
+            <div>
+              <b>$<span class="price">125.00</span></b>
+              <span class="off">50%</span>
+            </div>
+            <del>$250.00</del>
+          </div>
+          <div class="interact">
+            <div class="counter">
+            <i id="minus" class="fa-solid fa-minus"></i>
+            <span id="count">1</span>
+            <i id="plus" class="fa-solid fa-plus"></i>
+          </div>
+          <div class="d-grid gap-2">
+            <button id="add-to-cart" class="btn btn-primary" type="button">
+              <i class="fa-solid fa-cart-shopping"></i>
+              Add to cart
+            </button>
+          </div>
+          </div>
+        </article>
+      </div>
+
+      <!--Footer-->
+      <footer>
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="https://www.frontendmentor.io/profile/tiger8707">Omar Jalal</a>.
+        </div>
+      </footer>
+    </main>
+    
+    <script type="module" src="/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
