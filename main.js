@@ -22,7 +22,6 @@ const p = document.createElement("p")
 const checkoutButton = document.querySelector('.checkout')
 
 function emptyCheck() {
-    console.log("i'm here")
     if (!productsContent.hasChildNodes()) {
         checkoutButton.style.display = 'none';
         productsContent.classList.add("card-text")

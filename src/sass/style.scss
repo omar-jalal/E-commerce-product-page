@@ -135,7 +135,7 @@ button {
   display: flex;
   gap: 1em;
   img {
-    width: 1.5em;
+    width: 2em!important;
     border-radius: 50%;
 
     &:hover {
@@ -669,16 +669,11 @@ button {
     animation: fadeInMob .3s linear;
   }
   .desktop-layout {
-    gap: 5em;
+    gap: 7em;
+  }
 
-    section {
-      width: 40%;
-    }
-
-    article {
-      width: 50%;
-      padding: 5em;
-    }
+  .container {
+    width: 50%;
   }
 
   .attribution { 
